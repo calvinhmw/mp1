@@ -1,0 +1,1 @@
+$(document).ready(function(){var a=$(window).width(),b=$(window).height();$("#home").css({height:b,width:a})});
