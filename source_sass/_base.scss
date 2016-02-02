@@ -25,7 +25,10 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100% !important;
+      //@include vertical-align();
+      //@include horizontal-align();
+      //width: 100% !important;
+      //height: 100% !important;
       z-index: -500;
     }
     #nav-bar {
@@ -58,6 +61,7 @@
     }
     #banner {
       @include vertical-align();
+      z-index: 1000;
     }
   }
 }
