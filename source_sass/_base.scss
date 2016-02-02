@@ -1,15 +1,15 @@
 @import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
-
-h1 {
-  font-size: 2.2rem;
-  color: lighten($orange, 25);
-}
-
-.test {
-  font-size: 1.2rem;
-  color: $blue;
-}
+//
+//h1 {
+//  font-size: 2.2rem;
+//  color: lighten($orange, 25);
+//}
+//
+//.test {
+//  font-size: 1.2rem;
+//  color: $blue;
+//}
 
 #home {
   position: relative;
@@ -20,21 +20,18 @@ h1 {
     height: 100%;
     width: 100%;
     text-align: center;
-    //@include vertical-align();
-
     overflow: hidden;
     #background-video {
       position: absolute;
       top: 0;
       left: 0;
-      //height: 100% !important;
       width: 100% !important;
       z-index: -500;
     }
     #nav-bar {
       font: 14px 'opensans-bold', sans-serif;
       width: 100%;
-      height: 65px;
+      height: 60px;
       background-color: #0d3349;
       //background-color: transparent;
       text-transform: uppercase;
@@ -46,30 +43,27 @@ h1 {
       top: 0;
       ul {
         @include vertical-align();
+        //vertical-align: middle;
         li {
           display: inline-block;
-          //font-size: 200%;
           margin: 1em 0 1em 0;
           padding-left: 20px;
           padding-right: 20px;
-          //
-          //-webkit-margin-before: 1em;
-          //-webkit-margin-after: 1em;
-          //-webkit-margin-start: 0px;
-          //-webkit-margin-end: 0px;
-          //-webkit-padding-start: 40px;
-          a {
+         a {
             text-decoration: none;
             color: white;
           }
         }
       }
     }
+    #banner {
+      @include vertical-align();
+    }
   }
 }
 
 section {
-  height: 600px;
+  height: 1000px;
 }
 
 #about {

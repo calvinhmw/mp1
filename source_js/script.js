@@ -21,11 +21,14 @@ $(document).ready(function(){
     var newwidth = $(window).width();
     var newheight = $(window).height();
     $("#home").css({"height": newheight, "width": newwidth });
+    var newheight = $("#background-video").height();
+    $("#home").css({"height": newheight });
 });
 
-//
-//$(window).resize(function(){
-//    var newwidth = $(window).width();
-//    var newheight = $(window).height();
-//    $("#video-container").css({"height": newheight, "width": newwidth });
-//});
+
+$(window).resize(function(){
+    var newwidth = $(window).width();
+    $("#home").css({"width": newwidth });
+    var newheight = $("#background-video").height();
+    $("#home").css({"height": newheight });
+});

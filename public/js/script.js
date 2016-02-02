@@ -1,1 +1,1 @@
-$(document).ready(function(){var a=$(window).width(),b=$(window).height();$("#home").css({height:b,width:a})});
+$(document).ready(function(){var a=$(window).width(),b=$(window).height();$("#home").css({height:b,width:a});var b=$("#background-video").height();$("#home").css({height:b})}),$(window).resize(function(){var a=$(window).width();$("#home").css({width:a});var b=$("#background-video").height();$("#home").css({height:b})});
