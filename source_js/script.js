@@ -21,8 +21,14 @@ $(document).ready(function(){
     var newwidth = $(window).width();
     var newheight = $(window).height();
     $("#home").css({"height": newheight, "width": newwidth });
-    var newheight = $("#background-video").height();
-    $("#home").css({"height": newheight });
+
+    //console.log("video width is "+ videowidth);
+    //console.log("home width is "+ homewidth);
+    //$("#home").css({"height": videowidth });
+
+    //if(videoheight+300<$("#home").height()) {
+    //    $("#home").css({"height": videoheight });
+    //}
 });
 
 
@@ -31,4 +37,23 @@ $(window).resize(function(){
     $("#home").css({"width": newwidth });
     var newheight = $("#background-video").height();
     $("#home").css({"height": newheight });
+
+    var videoheight = $("#background-video").height();
+    var videowidth = $("#background-video").width();
+    var homewidth = $("#home").width();
+    var homeheight = $("#home").height();
+
+
+    //console.log("video width is "+ videowidth);
+    //console.log("home width is "+ homewidth);
+
+    //console.log("video aspact ratio is "+ videowidth/videoheight);
+
+
 });
+
+//$("#home").on({
+//    click: function() {
+//        console.log("yes");
+//    }
+//});
