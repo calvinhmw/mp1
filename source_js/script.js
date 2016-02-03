@@ -82,6 +82,9 @@ $(document).ready(function(){
     }else{
         $("#background-video").css({"width": homewidth});
     }
+    $("section").css({"min-height": 0.8*$(window).height()});
+    $("#footer-home").css({"min-height": 0.15*$(window).height()});
+
 });
 
 
