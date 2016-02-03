@@ -68,11 +68,17 @@ $(document).ready(function(){
     var videowidth = $("#background-video").width();
     var homewidth = $("#home").width();
     var homeheight = $("#home").height();
+    console.log("home height: "+homeheight);
+    console.log("home width: "+homewidth);
+    console.log("video width: "+videowidth);
+    console.log("video height: "+videoheight);
+
 
     var homeAsRatio = homewidth/homeheight;
 
     if(videoAsRatio>homeAsRatio) {
         $("#background-video").css({"height": homeheight});
+        console.log("yes");
     }else{
         $("#background-video").css({"width": homewidth});
     }
