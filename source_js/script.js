@@ -55,10 +55,6 @@
 //});
 
 
-
-
-
-
 var videoAsRatio = 1280/720;
 
 
@@ -99,11 +95,11 @@ $(window).resize(function(){
     var homeheight = $("#home").height();
     var homeAsRatio = homewidth/homeheight;
 
-    if(homeAsRatio>=videoAsRatio) {
-        $("#background-video").css({"width": homewidth});
-    }else if(homeAsRatio<videoAsRatio){
-        $("#background-video").css({"height": homeheight});
-    }
+    //if(homeAsRatio>=videoAsRatio) {
+    //    $("#background-video").css({"width": homewidth});
+    //}else if(homeAsRatio<videoAsRatio){
+    //    $("#background-video").css({"height": homeheight});
+    //}
 
 });
 
