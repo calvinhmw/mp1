@@ -14,3 +14,12 @@
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+
+
+@mixin scale-element($percentage) {
+  -webkit-transform: scale($percentage); /* Saf3.1+, Chrome */
+  -moz-transform: scale($percentage); /* FF3.5+ */
+  -ms-transform: scale($percentage); /* IE9 */
+  -o-transform: scale($percentage); /* Opera 10.5+ */
+  transform: scale($percentage);
+}
