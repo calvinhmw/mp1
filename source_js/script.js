@@ -1,62 +1,4 @@
-//var divs = document.getElementsByTagName('div');
-//for(var i=0; i<divs.length; i++) {
-//  divs[i].addEventListener("click", highlightThis);
-//  /*
-//  divs[i].addEventListener("click", highlightThis, true);
-//  divs[i].addEventListener("click", highlightThis, false);*/
-//}
-//
-//function highlightThis(event) {
-//    //event.stopPropagation();
-//
-//    var backgroundColor = this.style.backgroundColor;
-//    this.style.backgroundColor='yellow';
-//    alert(this.className);
-//    this.style.backgroundColor=backgroundColor;
-//}
-//
-
-
-
-//
-//$(document).ready(function(){
-//    var newwidth = $(window).width();
-//    var newheight = $(window).height();
-//    $("#home").css({"height": newheight, "width": newwidth });
-//
-//    //console.log("video width is "+ videowidth);
-//    //console.log("home width is "+ homewidth);
-//    //$("#home").css({"height": videowidth });
-//
-//    //if(videoheight+300<$("#home").height()) {
-//    //    $("#home").css({"height": videoheight });
-//    //}
-//});
-//
-//
-//$(window).resize(function(){
-//    var newwidth = $(window).width();
-//    $("#home").css({"width": newwidth });
-//    var newheight = $("#background-video").height();
-//    $("#home").css({"height": newheight });
-//
-//    var videoheight = $("#background-video").height();
-//    var videowidth = $("#background-video").width();
-//    var homewidth = $("#home").width();
-//    var homeheight = $("#home").height();
-//
-//
-//    //console.log("video width is "+ videowidth);
-//    //console.log("home width is "+ homewidth);
-//
-//    //console.log("video aspact ratio is "+ videowidth/videoheight);
-//
-//
-//});
-
-
 var videoAsRatio = 1280/720;
-
 
 $(document).ready(function(){
 
@@ -68,22 +10,24 @@ $(document).ready(function(){
     var videowidth = $("#background-video").width();
     var homewidth = $("#home").width();
     var homeheight = $("#home").height();
-    console.log("home height: "+homeheight);
-    console.log("home width: "+homewidth);
-    console.log("video width: "+videowidth);
-    console.log("video height: "+videoheight);
+    //console.log("home height: "+homeheight);
+    //console.log("home width: "+homewidth);
+    //console.log("video width: "+videowidth);
+    //console.log("video height: "+videoheight);
 
 
     var homeAsRatio = homewidth/homeheight;
 
     if(videoAsRatio>homeAsRatio) {
         $("#background-video").css({"height": homeheight});
-        console.log("yes");
+        //console.log("yes");
     }else{
         $("#background-video").css({"width": homewidth});
     }
     $("section").css({"min-height": 0.8*$(window).height()});
     $("#footer-home").css({"min-height": 0.15*$(window).height()});
+
+    animate_carousel();
 
 });
 
@@ -112,40 +56,41 @@ $(window).resize(function(){
 
 });
 
+function animate_carousel(){
+    var num_carousels = $(".carousel-content").length;
+    $("#carousel-0").addClass('active');
+    $(".carousel-arrow").click(function(){
+        var $curActive = $(".carousel-content.active");
 
+        // hack, for some reasons if click too fast none of the element becomes active.
+        if($curActive.length==0) {
+            console.log("no carousel is active now");
+            $("#carousel-0").addClass('active');
+            $curActive = $(".carousel-0");
+        }
+        var curActiveIdx = parseInt($curActive.attr("id").split('-')[1]);
+        var dir = $(this).attr("id").split('-')[1];
+        var nextIdx = curActiveIdx;
+        if(dir=="l") {
+            nextIdx = curActiveIdx+1;
+        }else if(dir=="r"){
+            nextIdx = curActiveIdx-1;
+        }
+        nextIdx = nextIdx % num_carousels;
+        if(nextIdx<0) nextIdx=num_carousels-1;
 
+        var $nextActive = $("#carousel-"+nextIdx);
+        $curActive.addClass(dir=="l"? "go-left" : "go-right");
+        $nextActive.addClass("active").addClass(dir=="l"? "right-arrive" : "left-arrive");
+        console.log($curActive);
+        console.log($nextActive);
 
-
-//
-//$(document).ready(function(){
-//    var newwidth = $(window).width();
-//    var newheight = $(window).height();
-//    $("#home").css({"height": newheight, "width": newwidth });
-//
-//    //console.log("video width is "+ videowidth);
-//    //console.log("home width is "+ homewidth);
-//    //$("#home").css({"height": videowidth });
-//
-//    //if(videoheight+300<$("#home").height()) {
-//    //    $("#home").css({"height": videoheight });
-//    //}
-//});
-//
-//
-//$(window).resize(function(){
-//    var newwidth = $(window).width();
-//    $("#home").css({"width": newwidth });
-//    var newheight = $("#background-video").height();
-//    $("#home").css({"height": newheight });
-//
-//    var videoheight = $("#background-video").height();
-//    var videowidth = $("#background-video").width();
-//    var homewidth = $("#home").width();
-//    var homeheight = $("#home").height();
-//
-//
-//    //console.log("video width is "+ videowidth);
-//    //console.log("home width is "+ homewidth);
-//
-//    //console.log("video aspact ratio is "+ videowidth/videoheight);
-//});
+        $curActive.one("animationend", function(){
+            $curActive.removeClass("active go-left go-right");
+        });
+        $nextActive.one("animationend", function(){
+            $nextActive.removeClass("right-arrive left-arrive");
+        });
+        return false;
+    });
+}

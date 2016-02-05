@@ -23,3 +23,18 @@
   -o-transform: scale($percentage); /* Opera 10.5+ */
   transform: scale($percentage);
 }
+@mixin horizontal-move($distance) {
+  -webkit-transform: translateX($distance);
+  -moz-transform: translateX($distance); /* FF3.5+ */
+  -ms-transform: translateX($distance);
+  -o-transform: translateX($distance); /* Opera 10.5+ */
+  transform: translateX($distance);
+}
+
+@mixin vertical-move($distance) {
+  -webkit-transform: translateY($distance);
+  -moz-transform: translateY($distance); /* FF3.5+ */
+  -ms-transform: translateY($distance);
+  -o-transform: translateY($distance); /* Opera 10.5+ */
+  transform: translateY($distance);
+}
