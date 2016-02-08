@@ -334,14 +334,16 @@ section {
   width: 100%;
   height: 100%;
   text-align: center;
-  z-index: 2000;
+  z-index: 1000;
   background-color: black;
   opacity: 0.3;
   .modal {
     @include vertical-align(absolute);
-    //width: 30%;
     //height:30%;
-    background-color: yellow;
+    //background-color: yellow;
+    img {
+      width: 100%;
+    }
   }
 }
 

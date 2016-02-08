@@ -97,7 +97,6 @@ function animate_carousel() {
 }
 
 
-
 function animate_modal() {
 
     $(".carousel-image").click(function (e) {
