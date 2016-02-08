@@ -102,7 +102,7 @@ section {
     #profile-pic {
       @include scale-element(0.2);
       position: absolute;
-      top:0;
+      top: 0;
       left: 0;
     }
   }
@@ -111,7 +111,7 @@ section {
 
 #education {
   //width: 100%;
-  background-color:  #2c3e50 ;
+  background-color: #2c3e50;
 }
 
 #projects {
@@ -144,12 +144,13 @@ section {
     }
   }
 }
+
 //class
 .center {
   text-align: center;
 }
 
-.absolute-positioned{
+.absolute-positioned {
   position: absolute;
 }
 
@@ -180,7 +181,7 @@ section {
     cursor: pointer;
   }
   .carousel-arrow:hover {
-    background: rgba(50,50,50,0.5);
+    background: rgba(50, 50, 50, 0.5);
   }
   #carousel-l-arrow {
     left: 0;
@@ -196,65 +197,75 @@ section {
   }
 
   .carousel-content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      .carousel-description {
-        @include vertical-align(absolute);
-        //border: 2px solid blue ;
-        font: 3em $font-banner1;
-        color: antiquewhite;
-        float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .carousel-description {
+      @include vertical-align(absolute);
+      //border: 2px solid blue ;
+      font: 3em $font-banner1;
+      color: antiquewhite;
+      float: left;
+    }
+    .carousel-image {
+      @include vertical-align(absolute);
+      overflow: hidden;
+      float: right;
+      //border: 2px solid blue ;
+      img {
+        width: 80%;
       }
-      .carousel-image {
+      h1 {
         @include vertical-align(absolute);
-        overflow: hidden;
-        float: right;
-        //border: 2px solid blue ;
-        img {
-          width: 80%;
-        }
+        display: none;
       }
-
+    }
+    .carousel-image > img:hover {
+      opacity: 0.2;
+      background-color: white;
+      cursor: pointer;
+    }
   }
 
   #carousel-0 {
     background: #2b81af;
     background: -webkit-linear-gradient(left, #2b81af, #0d3349); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right,   #2b81af, #0d3349); /* For Opera 11.1 to 12.0 */
+    background: -o-linear-gradient(right, #2b81af, #0d3349); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right, #2b81af, #0d3349);
-    background: linear-gradient(to right,   #2b81af, #0d3349); /* Standard syntax */
+    background: linear-gradient(to right, #2b81af, #0d3349); /* Standard syntax */
 
   }
   #carousel-1 {
     background-color: #1fa67a;
-    background: -webkit-linear-gradient(left, #1fa67a , #BD3613); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right,  #1fa67a , #BD3613); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right,  #1fa67a , #BD3613); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right,  #1fa67a , #BD3613); /* Standard syntax */
+    background: -webkit-linear-gradient(left, #1fa67a, #BD3613); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #1fa67a, #BD3613); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #1fa67a, #BD3613); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #1fa67a, #BD3613); /* Standard syntax */
   }
   #carousel-2 {
     background: #8A6343;
-    background: -webkit-linear-gradient(left, #8A6343 , #BD3613); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right,  #8A6343 , #BD3613); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right,  #8A6343 , #BD3613); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right,  #8A6343 , #BD3613); /* Standard syntax */
+    background: -webkit-linear-gradient(left, #8A6343, #BD3613); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #8A6343, #BD3613); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #8A6343, #BD3613); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #8A6343, #BD3613); /* Standard syntax */
   }
   #carousel-3 {
     background: #B94A48;
-    background: -webkit-linear-gradient(left, #B94A48 , #BD3613); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right,  #B94A48 , #BD3613); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right,  #B94A48 , #BD3613); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right,  #B94A48 , #BD3613); /* Standard syntax */
+    background: -webkit-linear-gradient(left, #B94A48, #BD3613); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #B94A48, #BD3613); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #B94A48, #BD3613); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #B94A48, #BD3613); /* Standard syntax */
   }
 
 }
+
 //carousel animation
 .carousel-content:not(.active) {
   display: none;
 }
+
 @keyframes go-right {
   0% {
     opacity: 1;
@@ -265,6 +276,7 @@ section {
     transform: translateX(10%);
   }
 }
+
 @keyframes go-left {
   0% {
     opacity: 1;
@@ -275,6 +287,7 @@ section {
     transform: translateX(-10%);
   }
 }
+
 @keyframes left-arrive {
   0% {
     opacity: 0;
@@ -285,6 +298,7 @@ section {
     //transform: translateX(0);
   }
 }
+
 @keyframes right-arrive {
   0% {
     opacity: 0;
@@ -299,19 +313,39 @@ section {
 .carousel-content.go-left {
   animation: go-left 0.5s;
 }
+
 .carousel-content.go-right {
   animation: go-right 0.5s;
 }
+
 .carousel-content.left-arrive {
   animation: left-arrive 0.5s;
 }
+
 .carousel-content.right-arrive {
   animation: right-arrive 0.5s;
 }
 
+#modal-layer {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 2000;
+  background-color: black;
+  opacity: 0.3;
+  .modal {
+    @include vertical-align(absolute);
+    //width: 30%;
+    //height:30%;
+    background-color: yellow;
+  }
+}
 
-
-  //row
+//row
 
 .row {
   width: 100%;

@@ -33,7 +33,7 @@
                     <a href="#skills"><h2>skills</h2></a>
                 </li>
                 <!--<li>-->
-                    <!--<a href="#contact"><h2>contact</h2></a>-->
+                <!--<a href="#contact"><h2>contact</h2></a>-->
                 <!--</li>-->
             </ul>
         </nav>
@@ -49,7 +49,7 @@
 
     </div>
     <!--<div  id="profile-pic-container" class="column col-3 l-offset-3">-->
-        <!--<img src="media/profile.jpg" alt="profile.jpg" id="profile-pic">-->
+    <!--<img src="media/profile.jpg" alt="profile.jpg" id="profile-pic">-->
     <!--</div>-->
 </section>
 <section id="education">
@@ -61,53 +61,47 @@
 </section>
 
 
-
-
 <section id="projects">
     <div class="section-header row center"><span>Checkout some of my recent projects!</span></div>
     <div class="section-content column col-8 l-offset-2">
 
         <div class="carousel column">
-            <div class="carousel-arrow"  id="carousel-l-arrow"><a id="arrow-left" class="fa fa-angle-left"></a></div>
+            <div class="carousel-arrow" id="carousel-l-arrow"><a id="arrow-left" class="fa fa-angle-left"></a></div>
 
             <div class="carousel-content" id="carousel-0">
-                <div class = "carousel-description col-5 center"><h1>Human and Robot</h1></div>
-                <div class = "carousel-image col-7 l-offset-5 center">
+                <div class="carousel-description col-5 center"><h1>Human and Robot</h1></div>
+                <div class="carousel-image col-7 l-offset-5 center" id="robot">
                     <img src="media/robot.gif">
+                    <h1 class="col-6 l-offset-3">click for detail</h1>
                 </div>
-                <div class="modal" id="robot-modal"></div>
             </div>
             <div class="carousel-content" id="carousel-1">
-                <div class = "carousel-description col-5 center"><h1>Mini-Skype</h1></div>
-                <div class = "carousel-image col-7 l-offset-5 center">
+                <div class="carousel-description col-5 center"><h1>Mini-Skype</h1></div>
+                <div class="carousel-image col-7 l-offset-5 center" id="skype">
                     <img src="media/skype_info.png">
+                    <h1 class="col-6 l-offset-3">click for detail</h1>
                 </div>
-                <div class="modal" id="skype-modal"></div>
             </div>
             <div class="carousel-content" id="carousel-2">
-                <div class = "carousel-description col-5 center"><h1>Chess</h1></div>
-                <div class = "carousel-image col-7 l-offset-5 center">
+                <div class="carousel-description col-5 center"><h1>Chess</h1></div>
+                <div class="carousel-image col-7 l-offset-5 center" id="chess">
                     <img src="media/chess.png">
+                    <h1 class="col-6 l-offset-3">click for detail</h1>
                 </div>
-                <div class="modal" id="chess-modal"></div>
             </div>
             <div class="carousel-content" id="carousel-3">
-                <div class = "carousel-description col-5 center"><h1>Portfolio</h1></div>
-                <div class = "carousel-image col-7 l-offset-5 center">
+                <div class="carousel-description col-5 center"><h1>Portfolio</h1></div>
+                <div class="carousel-image col-7 l-offset-5 center" id="svn">
                     <img src="media/svn.jpg">
+                    <h1 class="col-6 l-offset-3">click for detail</h1>
                 </div>
-                <div class="modal" id="svn-modal"></div>
             </div>
 
-            <div class="carousel-arrow"  id="carousel-r-arrow"><a id="arrow-right" class="fa fa-angle-right"></a></div>
+            <div class="carousel-arrow" id="carousel-r-arrow"><a id="arrow-right" class="fa fa-angle-right"></a></div>
         </div>
 
     </div>
 </section>
-
-
-
-
 
 
 <section id="skills">
@@ -116,6 +110,16 @@
 
     </div>
 </section>
+
+
+<div id="modal-layer">
+    <div class="modal" id="robot-modal">
+        <h1>robot-modal</h1>
+    </div>
+    <div class="modal col-4 l-offset-4" id="skype-modal"></div>
+    <div class="modal col-4 l-offset-4" id="chess-modal"></div>
+    <div class="modal col-4 l-offset-4" id="svn-modal"></div>
+</div>
 
 <footer id="footer-home">
     <div id="footer-content">
