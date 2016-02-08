@@ -339,8 +339,9 @@ section {
   opacity: 0.3;
   .modal {
     @include vertical-align(absolute);
-    //height:30%;
-    //background-color: yellow;
+    height:30%;
+    background-color: yellow;
+    border: 2px solid blue;
     img {
       width: 100%;
     }
