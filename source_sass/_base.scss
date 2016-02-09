@@ -335,13 +335,14 @@ section {
   height: 100%;
   text-align: center;
   z-index: 1000;
+  opacity: 0.85;
   background-color: black;
-  opacity: 0.3;
   .modal {
     @include vertical-align(absolute);
-    height:30%;
-    background-color: yellow;
-    border: 2px solid blue;
+    z-index: 2000;
+    //height:30%;
+    //background-color: white;
+    //border: 2px solid blue;
     img {
       width: 100%;
     }
