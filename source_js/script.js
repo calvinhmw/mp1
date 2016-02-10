@@ -102,11 +102,21 @@ function animate_modal() {
     $(".carousel-image").click(function (e) {
         var thisId = $(this).attr("id");
         var $modalLayer= $("#modal-layer");
-        $modalLayer.show();
+        //$modalLayer.show();
+        var $modal_id = thisId+"-modal";
+        $("#"+$modal_id).fadeIn(500, 'swing');
+        $modalLayer.fadeIn(500, 'swing');
+        e.stopPropagation();
+    });
+
+    $(".modal").click(function(e) {
         e.stopPropagation();
     });
 
     $(document).click(function(){
+        $(".modal").each(function(){
+            $(this).fadeOut(200, 'swing');
+        });
         if(!$("#modal-layer").is(":hidden")) {
             $("#modal-layer").hide();
         }

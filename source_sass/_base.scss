@@ -6,7 +6,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:700');
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,600italic,400italic,700italic,800,800italic);
+//@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,600italic,400italic,700italic,800,800italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
 
 #home {
   position: relative;
@@ -39,7 +40,7 @@
       left: 0;
       top: 0;
       #name-label {
-        @include vertical-align();
+        @include align-vertically();
         font: 2em $font-label3;
         color: antiquewhite;
         float: left;
@@ -48,7 +49,7 @@
         text-align: left;
       }
       ul {
-        @include vertical-align();
+        @include align-vertically();
         font: 1.3em $font-nav2;
         letter-spacing: 2.5px;
         width: 60%;
@@ -75,7 +76,7 @@
       }
     }
     #banner {
-      @include vertical-align();
+      @include align-vertically();
       font: 4em $font-banner1;
       color: azure;
       //text-align: center;
@@ -137,7 +138,7 @@ section {
     width: 100%;
     text-align: center;
     color: antiquewhite;
-    @include vertical-align(absolute);
+    @include align-vertically(absolute);
     #thank-you {
       font: 2em $font-section-header2;
       margin-bottom: 1%;
@@ -174,7 +175,7 @@ section {
   left: 0;
   width: 100%;
   .carousel-arrow {
-    @include vertical-align(absolute);
+    @include align-vertically(absolute);
     font-size: 5em;
     color: white;
     z-index: 500;
@@ -203,14 +204,14 @@ section {
     width: 100%;
     height: 100%;
     .carousel-description {
-      @include vertical-align(absolute);
+      @include align-vertically(absolute);
       //border: 2px solid blue ;
       font: 3em $font-banner1;
       color: antiquewhite;
       float: left;
     }
     .carousel-image {
-      @include vertical-align(absolute);
+      @include align-vertically(absolute);
       overflow: hidden;
       float: right;
       //border: 2px solid blue ;
@@ -218,7 +219,7 @@ section {
         width: 80%;
       }
       h1 {
-        @include vertical-align(absolute);
+        @include align-vertically(absolute);
         display: none;
       }
     }
@@ -335,16 +336,35 @@ section {
   height: 100%;
   text-align: center;
   z-index: 1000;
-  opacity: 0.85;
+  opacity: 0.6;
   background-color: black;
-  .modal {
-    @include vertical-align(absolute);
-    z-index: 2000;
-    //height:30%;
-    //background-color: white;
-    //border: 2px solid blue;
-    img {
-      width: 100%;
+
+}
+
+.modal {
+  @include align-vertically(fixed);
+  display: none;
+  z-index: 2000;
+  background: white;
+  img {
+    width: 100%;
+  }
+  div{
+    position: relative;
+    //font-family: $font-regular;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    h1 {
+      //font-size: 1em;
+      //font-weight: 700;
+      font: bold 1em $font-regular;
+    }
+    ol {
+      list-style: disc;
+      margin: 0.5em;
+      //font-size: 0.8em ;
+      //font-weight: 400;
+      font: normal 0.8em $font-regular;
     }
   }
 }
