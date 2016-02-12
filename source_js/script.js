@@ -118,7 +118,16 @@ function animate_modal() {
             $(this).fadeOut(200, 'swing');
         });
         if(!$("#modal-layer").is(":hidden")) {
-            $("#modal-layer").hide();
+            $("#modal-layer").fadeOut(100, 'swing');
+        }
+    });
+
+    $(".modal-footer").click(function(){
+        $(".modal").each(function(){
+            $(this).fadeOut(200, 'swing');
+        });
+        if(!$("#modal-layer").is(":hidden")) {
+            $("#modal-layer").fadeOut(100, 'swing');
         }
     });
 }
