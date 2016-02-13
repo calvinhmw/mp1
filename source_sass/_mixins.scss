@@ -9,7 +9,7 @@
 }
 
 
-@mixin horizontal-align($position: relative) {
+@mixin align-horizontally($position: relative) {
   position: $position;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -18,25 +18,42 @@
 }
 
 
-@mixin scale-element($percentage) {
-  -webkit-transform: scale($percentage); /* Saf3.1+, Chrome */
-  -moz-transform: scale($percentage); /* FF3.5+ */
-  -ms-transform: scale($percentage); /* IE9 */
-  -o-transform: scale($percentage); /* Opera 10.5+ */
+@mixin scale-element-on-hover($percentage) {
+  -webkit-transform: scale($percentage);
+  -moz-transform: scale($percentage);
+  -ms-transform: scale($percentage);
+  -o-transform: scale($percentage);
   transform: scale($percentage);
+  //
+  //-webkit-transition: transform 0.3s ease-in;
+  //-moz-transition:transform 0.3s ease-in;
+  //-o-transition: transform 0.3s ease-in;
+  //transition:transform 0.3s ease-in;
 }
 @mixin horizontal-move($distance) {
   -webkit-transform: translateX($distance);
-  -moz-transform: translateX($distance); /* FF3.5+ */
+  -moz-transform: translateX($distance);
   -ms-transform: translateX($distance);
-  -o-transform: translateX($distance); /* Opera 10.5+ */
+  -o-transform: translateX($distance);
   transform: translateX($distance);
 }
 
 @mixin vertical-move($distance) {
   -webkit-transform: translateY($distance);
-  -moz-transform: translateY($distance); /* FF3.5+ */
+  -moz-transform: translateY($distance);
   -ms-transform: translateY($distance);
-  -o-transform: translateY($distance); /* Opera 10.5+ */
+  -o-transform: translateY($distance);
   transform: translateY($distance);
 }
+
+
+@mixin transition-feature($property, $duration, $timing-function) {
+  -webkit-transition: $property $duration $timing-function;
+  -moz-transition: $property $duration $timing-function;
+  -o-transition: $property $duration $timing-function;
+  transition: $property $duration $timing-function;
+
+}
+
+
+

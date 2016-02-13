@@ -6,8 +6,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:700');
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
-
+//@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,300italic,300,600italic,700,700italic,800,800italic);
 #home {
   position: relative;
   #video-container {
@@ -30,7 +30,9 @@
       width: 100%;
       height: 12%;
       background-color: #333;
+      //background-color: transparent;
       opacity: 0.5;
+      //opacity: 0;
       text-transform: uppercase;
       margin: 0;
       z-index: 1000;
@@ -58,14 +60,9 @@
           display: inline-block;
           margin: 1em 0 1em 2%;
           padding: 0.4em;
-          border: 1px solid antiquewhite;
-          //border-radius: 20%;
-          border-radius: 2em 1em 4em / 0.5em 3em;
 
-          //border-top-left-radius: 2em 0.5em;
-          //border-top-right-radius: 1em 3em;
-          //border-bottom-right-radius: 4em 0.5em;
-          //border-bottom-left-radius: 1em 3em;
+          border: 1px solid antiquewhite;
+          border-radius: 2em 1em 4em / 0.5em 3em;
           a {
             text-decoration: none;
             color: floralwhite;
@@ -98,10 +95,6 @@ section {
 
   background-color: antiquewhite;
 
-  .section-header {
-    //color: antiquewhite;
-  }
-
   #profile-container {
     position: absolute;
     height: 70%;
@@ -116,7 +109,6 @@ section {
 
   #self-intro {
     font: normal 1.3em $font-regular;
-    //font-style: italic;
     height: 70%;
     div {
       @include align-vertically(absolute);
@@ -129,7 +121,6 @@ section {
   #social-font {
     position: absolute;
     bottom: 0;
-    //background: greenyellow;
     width: 100%;
     height: 30%;
     ul {
@@ -140,36 +131,93 @@ section {
         .fa {
           font-size: 3.5em;
           color: #3c510c;
+          @include transition-feature(transform, 0.3s, ease-out);
+        }
+        .fa:hover {
+          @include scale-element-on-hover(1.3);
+          @include transition-feature(transform, 0.3s, ease-out);
         }
       }
     }
   }
-
 }
 
 #education {
-  //width: 100%;
-  background-color: #2c3e50;
-  .section-content {
-    background: url(../media/background-img2.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+  .edu-content {
+    height: 50%;
+    font: normal 1.2em $font-regular;
+    .uiuc-pic {
+      @include align-vertically(absolute);
+      overflow: hidden;
+      //border: 2px solid blue;
+      img {
+        float: right;
+      }
+    }
+    .edu-experience {
+      margin-left: 0.5em;
+      //border: 2px solid black;
+      overflow: hidden;
+      @include align-vertically(absolute);
+      h3 {
+        font-weight: bold;
+        font-size: 1.3em;
+        color: blueviolet;
+      }
+      p {
+        font-style: italic;
+        margin-bottom: 0.5em;
+      }
+      ul {
+        list-style: disc inside;
+        color: #000000;
+        font-weight: 600;
+        a{
+          text-decoration: none;
+        }
+      }
+
+    }
+  }
+  #ms-edu {
+    top: 0;
+  }
+  #bs-edu {
+    bottom: 0;
   }
 }
 
+#education:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-image: url(../media/campus.jpg);
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1000;
+
+}
+
 #projects {
-  //width: 100%;
   background-color: #fff;
 }
 
 #projects {
-  //width: 100%;
   background-color: #00BDBD;
 }
 
 #skills {
-  //width: 100%;
-  background-color: #2F6FAD;
+  background-color: antiquewhite;
 }
 
 #footer-home {
@@ -200,13 +248,14 @@ section {
 .section-header {
   margin-top: 0;
   font-family: $font-section-header2;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 .section-content {
   top: 15%;
   height: 75%;
   border: 2px dashed black;
+  overflow: hidden;
 }
 
 .regular-spacing {
@@ -447,6 +496,7 @@ section {
   }
 }
 
+
 //row
 
 .row {
@@ -598,3 +648,143 @@ section {
 
 
 
+
+//row height
+.row-1 {
+  height: 8.33333%;
+}
+
+.row-2 {
+  height: 16.66667%;
+}
+
+.row-3 {
+  height: 25%;
+}
+
+.row-4 {
+  height: 33.33333%;
+}
+
+.row-5 {
+  height: 41.66667%;
+}
+
+.row-6 {
+  height: 50%;
+}
+
+.row-7 {
+  height: 58.33333%;
+}
+
+.row-8 {
+  height: 66.66667%;
+}
+
+.row-9 {
+  height: 75%;
+}
+
+.row-10 {
+  height: 83.33333%;
+}
+
+.row-11 {
+  height: 91.66667%;
+}
+
+.row-12 {
+  height: 66.66667%;
+}
+
+
+
+//row offset
+.t-offset-1 {
+  top: 8.33333%;
+}
+
+.b-offset-1 {
+  bottom: 8.33333%;
+}
+
+.t-offset-2 {
+  top: 16.66667%;
+}
+
+.b-offset-2 {
+  bottom: 16.66667%;
+}
+
+.t-offset-3 {
+  top: 25%;
+}
+
+.b-offset-3 {
+  bottom: 25%;
+}
+
+.t-offset-4 {
+  top: 33.33333%;
+}
+
+.b-offset-4 {
+  bottom: 33.33333%;
+}
+
+.t-offset-5 {
+  top: 41.66667%;
+}
+
+.b-offset-5 {
+  bottom: 41.66667%;
+}
+
+.t-offset-6 {
+  top: 50%;
+}
+
+.b-offset-6 {
+  bottom: 50%;
+}
+
+.t-offset-7 {
+  top: 58.33333%;
+}
+
+.b-offset-7 {
+  bottom: 58.33333%;
+}
+
+.t-offset-8 {
+  top: 66.66667%;
+}
+
+.b-offset-8 {
+  bottom: 66.66667%;
+}
+
+.t-offset-9 {
+  top: 75%;
+}
+
+.b-offset-9 {
+  bottom: 75%;
+}
+
+.t-offset-10 {
+  top: 83.33333%;
+}
+
+.b-offset-10 {
+  bottom: 83.33333%;
+}
+
+.t-offset-11 {
+  top: 91.66667%;
+}
+
+.b-offset-11 {
+  bottom: 91.66667%;
+}
