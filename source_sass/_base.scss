@@ -8,6 +8,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:700');
 //@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,300italic,300,600italic,700,700italic,800,800italic);
+
 #home {
   position: relative;
   #video-container {
@@ -172,7 +173,7 @@ section {
         list-style: disc inside;
         color: #000000;
         font-weight: 600;
-        a{
+        a {
           text-decoration: none;
         }
       }
@@ -452,7 +453,7 @@ section {
   img {
     width: 100%;
   }
-  .modal-description{
+  .modal-description {
     position: relative;
     margin-top: 1em;
     margin-bottom: 2em;
@@ -480,7 +481,7 @@ section {
     background-color: black;
     opacity: 0.8;
     font: bold 0.8em $font-regular;
-    h2{
+    h2 {
       @include align-vertically(absolute);
       text-transform: uppercase;
       color: white;
@@ -496,6 +497,17 @@ section {
   }
 }
 
+.icon-container {
+  height: 100%;
+  border: 1px dashed blue;
+  display: inline-block;
+  img {
+    //position: absolute;
+    @include align-vertically(absolute);
+    //margin-left: auto;
+    //margin-right: auto;
+  }
+}
 
 //row
 
@@ -645,10 +657,6 @@ section {
   right: 91.66667%;
 }
 
-
-
-
-
 //row height
 .row-1 {
   height: 8.33333%;
@@ -697,8 +705,6 @@ section {
 .row-12 {
   height: 66.66667%;
 }
-
-
 
 //row offset
 .t-offset-1 {
