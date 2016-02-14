@@ -26,7 +26,7 @@ $(document).ready(function () {
         $("#background-video").css({"width": homewidth});
     }
     //$("section").css({"min-height": 0.8 * $(window).height()});
-    $("section").css({"min-height": 0.9*$(window).height()});
+    $("section").css({"min-height": 0.9 * $(window).height()});
 
     $("#footer-home").css({"min-height": 0.15 * $(window).height()});
 
@@ -100,32 +100,32 @@ function animate_modal() {
 
     $(".carousel-image").click(function (e) {
         var thisId = $(this).attr("id");
-        var $modalLayer= $("#modal-layer");
+        var $modalLayer = $("#modal-layer");
         //$modalLayer.show();
-        var $modal_id = thisId+"-modal";
-        $("#"+$modal_id).fadeIn(500, 'swing');
+        var $modal_id = thisId + "-modal";
+        $("#" + $modal_id).fadeIn(500, 'swing');
         $modalLayer.fadeIn(500, 'swing');
         e.stopPropagation();
     });
 
-    $(".modal").click(function(e) {
+    $(".modal").click(function (e) {
         e.stopPropagation();
     });
 
-    $(document).click(function(){
-        $(".modal").each(function(){
+    $(document).click(function () {
+        $(".modal").each(function () {
             $(this).fadeOut(200, 'swing');
         });
-        if(!$("#modal-layer").is(":hidden")) {
+        if (!$("#modal-layer").is(":hidden")) {
             $("#modal-layer").fadeOut(100, 'swing');
         }
     });
 
-    $(".modal-footer").click(function(){
-        $(".modal").each(function(){
+    $(".modal-footer").click(function () {
+        $(".modal").each(function () {
             $(this).fadeOut(200, 'swing');
         });
-        if(!$("#modal-layer").is(":hidden")) {
+        if (!$("#modal-layer").is(":hidden")) {
             $("#modal-layer").fadeOut(100, 'swing');
         }
     });
@@ -133,7 +133,7 @@ function animate_modal() {
 
 
 function smooth_scroll() {
-    $("#nav-list li").click(function(event){
+    $("#nav-list li").click(function (event) {
         var scrollTo = $(this).attr('id').split('-')[2];
         //console.log(scrollTo);
         //$('html body')
@@ -145,7 +145,7 @@ function smooth_scroll() {
 }
 
 function navbar_effect_on_scroll() {
-    $(window).scroll(function(){
+    $(window).scroll(function () {
         //console.log('scroll');
         var curPos = $(document).scrollTop();
         var bannerPos = $('#banner').offset().top;
@@ -162,49 +162,47 @@ function navbar_effect_on_scroll() {
         //console.log('projects: '+projectsPos);
         //console.log('skills: '+skillsPos);
 
-        if(curPos>=bannerPos) {
+        if (curPos >= bannerPos) {
             $('#nav-bar').removeClass("navbar-invisible").addClass("navbar-visible");
-        }else{
+        } else {
             $('#nav-bar').removeClass("navbar-visible").addClass("navbar-invisible");
         }
 
-        if(curPos>=aboutPos) {
+        if (curPos >= aboutPos) {
             //console.log('nav bar ready to resize!');
             $('#nav-bar').removeClass("navbar-normal").addClass("navbar-small");
-        }else{
+        } else {
             $('#nav-bar').removeClass("navbar-small").addClass("navbar-normal");
         }
 
 
-
-
-        if(curPos>=homePos-1 && curPos<aboutPos-1) {
+        if (curPos >= homePos - 1 && curPos < aboutPos - 1) {
             $('#scroll-to-home').addClass('navbar-position-indicator');
-        }else{
+        } else {
             $('#scroll-to-home').removeClass('navbar-position-indicator');
         }
 
-        if(curPos>=aboutPos-1 && curPos<eduPos-1) {
+        if (curPos >= aboutPos - 1 && curPos < eduPos - 1) {
             $('#scroll-to-about').addClass('navbar-position-indicator');
-        }else{
+        } else {
             $('#scroll-to-about').removeClass('navbar-position-indicator');
         }
 
-        if(curPos>=eduPos-1 && curPos<projectsPos-1) {
+        if (curPos >= eduPos - 1 && curPos < projectsPos - 1) {
             $('#scroll-to-education').addClass('navbar-position-indicator');
-        }else{
+        } else {
             $('#scroll-to-education').removeClass('navbar-position-indicator');
         }
 
-        if(curPos>=projectsPos-1 && curPos<skillsPos-1) {
+        if (curPos >= projectsPos - 1 && curPos < skillsPos - 1) {
             $('#scroll-to-projects').addClass('navbar-position-indicator');
-        }else{
+        } else {
             $('#scroll-to-projects').removeClass('navbar-position-indicator');
         }
 
-        if(curPos>=skillsPos-1) {
+        if (curPos >= skillsPos - 1) {
             $('#scroll-to-skills').addClass('navbar-position-indicator');
-        }else{
+        } else {
             $('#scroll-to-skills').removeClass('navbar-position-indicator');
         }
 

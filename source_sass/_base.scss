@@ -5,8 +5,6 @@
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:700');
-//@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,300italic,300,600italic,700,700italic,800,800italic);
 
 #home {
@@ -87,7 +85,7 @@
     font-size: 1.3em;
   }
   li {
-    font-size: 0.9em;
+    font-size: 1em;
     border-radius: 8px;
   }
 }
@@ -118,11 +116,12 @@ section {
   #profile-container {
     position: absolute;
     height: 70%;
+    //border: 1px dashed black;
     #profile-pic {
-      @include align-vertically(absolute);
-    }
-    .circle-img {
+      position: absolute;
+      //@include align-vertically(absolute);
       border-radius: 50%;
+
     }
   }
 
@@ -227,12 +226,23 @@ section {
 
 }
 
-#projects {
-  background-color: #fff;
-}
+#projects:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../media/background-img2.png);
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1000;
 
-#projects {
-  background-color: #00BDBD;
 }
 
 #skills {
@@ -273,7 +283,7 @@ section {
 .section-content {
   top: 15%;
   height: 75%;
-  border: 2px dashed black;
+  //border: 2px dashed black;
   overflow: hidden;
 }
 
@@ -293,7 +303,7 @@ section {
   position: absolute;
   top: 5%;
   height: 90%;
-  border: 2px solid black;
+  //border: 2px solid black;
   left: 0;
   width: 100%;
   .carousel-arrow {
@@ -328,7 +338,7 @@ section {
     .carousel-description {
       @include align-vertically(absolute);
       //border: 2px solid blue ;
-      font: 3em $font-banner1;
+      font: 2.5em $font-banner1;
       color: antiquewhite;
       float: left;
     }
@@ -336,50 +346,62 @@ section {
       @include align-vertically(absolute);
       overflow: hidden;
       float: right;
-      //border: 2px solid blue ;
       img {
         width: 80%;
       }
       h1 {
         @include align-vertically(absolute);
+        font: bold 1em $font-regular;
+        text-transform: uppercase;
+        color: white;
+        //visibility: hidden;
         display: none;
       }
     }
-    .carousel-image > img:hover {
+    .carousel-image img:hover {
       opacity: 0.2;
-      background-color: white;
+      background-color: black;
       cursor: pointer;
     }
+
+    .carousel-image img:hover + h1 {
+      display: block;
+      //@include transition-feature(all, 0.2s, ease-in);
+    }
+    //
+    //.carousel-image:hover img {
+    //  background-color: rgba(0,0,0,0.2);
+    //}
   }
 
   #carousel-0 {
     background: #2b81af;
-    background: -webkit-linear-gradient(left, #2b81af, #0d3349); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #2b81af, #0d3349); /* For Opera 11.1 to 12.0 */
+    background: -webkit-linear-gradient(left, #2b81af, #0d3349);
+    background: -o-linear-gradient(right, #2b81af, #0d3349);
     background: -moz-linear-gradient(right, #2b81af, #0d3349);
-    background: linear-gradient(to right, #2b81af, #0d3349); /* Standard syntax */
+    background: linear-gradient(to right, #2b81af, #0d3349);
 
   }
   #carousel-1 {
     background-color: #1fa67a;
-    background: -webkit-linear-gradient(left, #1fa67a, #BD3613); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #1fa67a, #BD3613); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #1fa67a, #BD3613); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #1fa67a, #BD3613); /* Standard syntax */
+    background: -webkit-linear-gradient(left, #1fa67a, #BD3613);
+    background: -o-linear-gradient(right, #1fa67a, #BD3613);
+    background: -moz-linear-gradient(right, #1fa67a, #BD3613);
+    background: linear-gradient(to right, #1fa67a, #BD3613);
   }
   #carousel-2 {
     background: #8A6343;
-    background: -webkit-linear-gradient(left, #8A6343, #BD3613); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #8A6343, #BD3613); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #8A6343, #BD3613); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #8A6343, #BD3613); /* Standard syntax */
+    background: -webkit-linear-gradient(left, #8A6343, #BD3613);
+    background: -o-linear-gradient(right, #8A6343, #BD3613);
+    background: -moz-linear-gradient(right, #8A6343, #BD3613);
+    background: linear-gradient(to right, #8A6343, #BD3613);
   }
   #carousel-3 {
     background: #B94A48;
-    background: -webkit-linear-gradient(left, #B94A48, #BD3613); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #B94A48, #BD3613); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #B94A48, #BD3613); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #B94A48, #BD3613); /* Standard syntax */
+    background: -webkit-linear-gradient(left, #B94A48, #BD3613);
+    background: -o-linear-gradient(right, #B94A48, #BD3613);
+    background: -moz-linear-gradient(right, #B94A48, #BD3613);
+    background: linear-gradient(to right, #B94A48, #BD3613);
   }
 
 }
@@ -458,8 +480,7 @@ section {
   height: 100%;
   text-align: center;
   z-index: 1000;
-  opacity: 0.6;
-  background-color: black;
+  background-color: rgba(0,0,0,0.6);
 
 }
 
@@ -517,13 +538,10 @@ section {
 
 .icon-container {
   height: 100%;
-  border: 1px dashed blue;
+  //border: 1px dashed blue;
   display: inline-block;
   img {
-    //position: absolute;
     @include align-vertically(absolute);
-    //margin-left: auto;
-    //margin-right: auto;
   }
 }
 
