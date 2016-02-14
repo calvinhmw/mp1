@@ -21,6 +21,8 @@
       top: 0;
       left: 0;
       z-index: -500;
+      @include animation-duration-control(4s);
+      @include animation-delay-control(3s);
     }
     #nav-bar {
       width: 100%;
@@ -62,8 +64,24 @@
     #banner {
       @include align-vertically();
       font: 4em $font-banner1;
-      color: azure;
+      //color: black;
       z-index: 100;
+
+      //span:first-child{
+      //  @include animation-delay-control(0);
+      //  @include animation-duration-control(5s);
+      //}
+      //
+      //span:nth-child(2){
+      //  @include animation-delay-control(1s);
+      //  @include animation-duration-control(3s);
+      //}
+      //
+      //h3 {
+      //  @include animation-delay-control(2s);
+      //  @include animation-duration-control(2s);
+      //}
+
     }
   }
 }
@@ -103,11 +121,60 @@
 }
 
 // on page load, animation starts:
+@-webkit-keyframes slow-start { 0% { opacity:0; } 100% { opacity:1; } }
+@-moz-keyframes slow-start { 0% { opacity:0; } 100% { opacity:1; } }
+@keyframes slow-start { 0% { opacity:0; } 100% { opacity:1; } }
 
-.content-fade-in {
-  @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-  @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+// change banner's text color, animation starts:
+@-webkit-keyframes text-color { 0% { color: black; } 100% { color: azure; } }
+@-moz-keyframes text-color { 0% { color: black; } 100% { color: azure; } }
+@keyframes text-color { 0% { color: black; } 100% { color: azure;} }
+
+
+.animation-generic {
+  opacity: 0;
+  -webkit-animation: slow-start ease-out 1;
+  -moz-animation: slow-start ease-out 1;
+  animation: slow-start ease-out 1;
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+}
+
+
+.animation-hi {
+  color: black;
+  opacity: 0;
+  -webkit-animation: slow-start 3s ease-out 0s 1, text-color 1s ease-out 2.5s 1;
+  -moz-animation: slow-start 3s ease-out 0s 1, text-color 1s ease-out 2.5s 1;
+  animation: slow-start 3s ease-out 0s 1, text-color 1s ease-out 2.5s 1;
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+}
+
+
+.animation-mingwei {
+  color: black;
+  opacity: 0;
+  -webkit-animation: slow-start 3s ease-out 1s 1, text-color 1s ease-out 2.5s 1;
+  -moz-animation: slow-start 3s ease-out 1s 1, text-color 1s ease-out 2.5s 1;
+  animation: slow-start 3s ease-out 1s 1, text-color 1s ease-out 2.5s 1;
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+}
+
+
+.animation-welcome {
+  color: black;
+  opacity: 0;
+  -webkit-animation: slow-start 2s ease-out 2s 1, text-color 1s ease-out 2.5s 1;
+  -moz-animation: slow-start 2s ease-out 2s 1, text-color 1s ease-out 2.5s 1;
+  animation: slow-start 2s ease-out 2s 1, text-color 1s ease-out 2.5s 1;
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
 }
 
 
@@ -119,6 +186,8 @@ section {
   overflow: hidden;
   padding-top: 5%;
   padding-bottom: 5%;
+  @include animation-delay-control(2s);
+  @include animation-duration-control(2s)
 }
 
 #about {

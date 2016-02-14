@@ -66,6 +66,27 @@
   transition: all 0.5s ease-out;
 }
 
+@mixin animation-duration-control($duration) {
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  animation-duration: $duration;
+}
+
+@mixin animation-delay-control($delay) {
+  -webkit-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+@mixin generic-animation-properties($name, $timing-function, $iteration, $fill) {
+  -webkit-animation: $name $timing-function $iteration;
+  -moz-animation: $name $timing-function $iteration;
+  animation: $name $timing-function $iteration;
+  -webkit-animation-fill-mode: $fill;
+  -moz-animation-fill-mode: $fill;
+  animation-fill-mode: $fill;
+}
+
 
 
 
