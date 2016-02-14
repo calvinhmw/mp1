@@ -21,9 +21,10 @@ $(document).ready(function () {
 
     if (videoAsRatio > homeAsRatio) {
         $("#background-video").css({"height": homeheight});
-        //console.log("yes");
+        console.log("yes");
     } else {
         $("#background-video").css({"width": homewidth});
+        console.log('no');
     }
     //$("section").css({"min-height": 0.8 * $(window).height()});
     $("section").css({"min-height": 0.9 * $(window).height()});
@@ -131,7 +132,7 @@ function animate_modal() {
 
 
 function smooth_scroll() {
-    $("#nav-list li").click(function (event) {
+    $("#nav-list li, #go-up-home").click(function (event) {
         var scrollTo = $(this).attr('id').split('-')[2];
         //console.log(scrollTo);
         //$('html body')
@@ -169,8 +170,10 @@ function navbar_effect_on_scroll() {
         if (curPos >= aboutPos) {
             //console.log('nav bar ready to resize!');
             $('#nav-bar').removeClass("navbar-normal").addClass("navbar-small");
+            $('#go-up-home').fadeIn(500, 'swing');
         } else {
             $('#nav-bar').removeClass("navbar-small").addClass("navbar-normal");
+            $('#go-up-home').fadeOut(500, 'swing');
         }
 
 

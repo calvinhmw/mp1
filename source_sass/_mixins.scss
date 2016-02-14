@@ -59,7 +59,7 @@
   transition: all 0.5s ease-out;
 }
 
-#nav-list li {
+#nav-list li, #go-up-icon {
   -moz-transition: all 0.5s ease-out;
   -webkit-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
@@ -78,14 +78,6 @@
   animation-delay: $delay;
 }
 
-@mixin generic-animation-properties($name, $timing-function, $iteration, $fill) {
-  -webkit-animation: $name $timing-function $iteration;
-  -moz-animation: $name $timing-function $iteration;
-  animation: $name $timing-function $iteration;
-  -webkit-animation-fill-mode: $fill;
-  -moz-animation-fill-mode: $fill;
-  animation-fill-mode: $fill;
-}
 
 
 
