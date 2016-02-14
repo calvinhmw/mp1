@@ -24,12 +24,8 @@
   -ms-transform: scale($percentage);
   -o-transform: scale($percentage);
   transform: scale($percentage);
-  //
-  //-webkit-transition: transform 0.3s ease-in;
-  //-moz-transition:transform 0.3s ease-in;
-  //-o-transition: transform 0.3s ease-in;
-  //transition:transform 0.3s ease-in;
 }
+
 @mixin horizontal-move($distance) {
   -webkit-transform: translateX($distance);
   -moz-transform: translateX($distance);
@@ -53,6 +49,14 @@
   -o-transition: $property $duration $timing-function;
   transition: $property $duration $timing-function;
 
+}
+
+
+#nav-bar, #nav-bar #name-label, ul {
+  -moz-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 

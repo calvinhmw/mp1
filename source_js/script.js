@@ -1,4 +1,5 @@
 var videoAsRatio = 1280 / 720;
+var $root = $('html body');
 
 $(document).ready(function () {
 
@@ -24,12 +25,15 @@ $(document).ready(function () {
     } else {
         $("#background-video").css({"width": homewidth});
     }
-    $("section").css({"min-height": 0.8 * $(window).height()});
+    //$("section").css({"min-height": 0.8 * $(window).height()});
+    $("section").css({"min-height": 0.9*$(window).height()});
+
     $("#footer-home").css({"min-height": 0.15 * $(window).height()});
 
     animate_carousel();
     animate_modal();
-
+    smooth_scroll();
+    navbar_effect_on_scroll();
 });
 
 
@@ -49,11 +53,6 @@ $(window).resize(function () {
     var homeheight = $("#home").height();
     var homeAsRatio = homewidth / homeheight;
 
-    //if(homeAsRatio>=videoAsRatio) {
-    //    $("#background-video").css({"width": homewidth});
-    //}else if(homeAsRatio<videoAsRatio){
-    //    $("#background-video").css({"height": homeheight});
-    //}
 
 });
 
@@ -129,6 +128,55 @@ function animate_modal() {
         if(!$("#modal-layer").is(":hidden")) {
             $("#modal-layer").fadeOut(100, 'swing');
         }
+    });
+}
+
+
+function smooth_scroll() {
+    $("#nav-list li").click(function(event){
+        var scrollTo = $(this).attr('id').split('-')[2];
+        //console.log(scrollTo);
+        //$('html body')
+        $root.animate({
+            scrollTop: $('#' + scrollTo).offset().top
+        }, 600);
+        event.preventDefault();
+    });
+}
+
+function navbar_effect_on_scroll() {
+    $(window).scroll(function(){
+        //console.log('scroll');
+        var curPos = $(document).scrollTop();
+        var bannerPos = $('#banner').offset().top;
+        var homePos = $('#home').offset().top;
+        var aboutPos = $('#about').offset().top;
+        var eduPos = $('#education').offset().top;
+        var projectsPos = $('#projects').offset().top;
+        var skillsPos = $('#skills').offset().top;
+
+        //console.log('curpos: '+curPos);
+        //console.log('home: '+ homePos);
+        //console.log('about: '+ aboutPos);
+        //console.log('edu: '+eduPos);
+        //console.log('projects: '+projectsPos);
+        //console.log('skills: '+skillsPos);
+
+        if(curPos>=bannerPos) {
+            $('#nav-bar').removeClass("navbar-invisible").addClass("navbar-visible");
+        }else{
+            $('#nav-bar').removeClass("navbar-visible").addClass("navbar-invisible");
+        }
+
+        if(curPos>=aboutPos) {
+            //console.log('nav bar ready to resize!');
+            $('#nav-bar').removeClass("navbar-normal").addClass("navbar-small");
+        }else{
+            $('#nav-bar').removeClass("navbar-small").addClass("navbar-normal");
+        }
+
+
+
     });
 }
 
