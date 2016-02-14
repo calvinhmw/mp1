@@ -356,22 +356,12 @@ section {
         color: white;
         //visibility: hidden;
         display: none;
+        padding:6px;
       }
     }
     .carousel-image img:hover {
-      opacity: 0.2;
-      background-color: black;
       cursor: pointer;
     }
-
-    .carousel-image img:hover + h1 {
-      display: block;
-      //@include transition-feature(all, 0.2s, ease-in);
-    }
-    //
-    //.carousel-image:hover img {
-    //  background-color: rgba(0,0,0,0.2);
-    //}
   }
 
   #carousel-0 {
@@ -403,6 +393,13 @@ section {
     background: -moz-linear-gradient(right, #B94A48, #BD3613);
     background: linear-gradient(to right, #B94A48, #BD3613);
   }
+
+}
+
+
+.hover-carousel-change {
+  opacity: 0.2;
+  background-color: black;
 
 }
 

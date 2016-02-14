@@ -98,7 +98,21 @@ function animate_carousel() {
 
 function animate_modal() {
 
-    $(".carousel-image").click(function (e) {
+    $(".carousel-image img").hover(function(){
+        $(this).addClass('hover-carousel-change');
+        //$(".carousel-image h1").fadeIn(200, 'swing');
+    },function(){
+        $(this).removeClass('hover-carousel-change');
+        //$(".carousel-image h1").fadeOut(200, 'swing');
+    });
+
+    //$(".carousel-image h1").hover(function(){
+    //    $(this).prev().addClass('hover-carousel-change');
+    //}, function(){
+    //    $(this).prev().addClass('hover-carousel-change');
+    //});
+
+    $(".carousel-image img").click(function (e) {
         var thisId = $(this).attr("id");
         var $modalLayer = $("#modal-layer");
         //$modalLayer.show();
