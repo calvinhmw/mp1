@@ -52,12 +52,20 @@
 }
 
 
-#nav-bar, #nav-bar #name-label, ul, ul li {
+#nav-bar, #nav-bar #name-label{
   -moz-transition: all 0.5s ease-out;
   -webkit-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
+
+#nav-list li {
+  -moz-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
 
 
 

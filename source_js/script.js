@@ -139,7 +139,7 @@ function smooth_scroll() {
         //$('html body')
         $root.animate({
             scrollTop: $('#' + scrollTo).offset().top
-        }, 600);
+        }, 650);
         event.preventDefault();
     });
 }
@@ -178,31 +178,31 @@ function navbar_effect_on_scroll() {
 
 
 
-        if(curPos>=homePos && curPos<aboutPos) {
+        if(curPos>=homePos-1 && curPos<aboutPos-1) {
             $('#scroll-to-home').addClass('navbar-position-indicator');
         }else{
             $('#scroll-to-home').removeClass('navbar-position-indicator');
         }
 
-        if(curPos>=aboutPos && curPos<eduPos) {
+        if(curPos>=aboutPos-1 && curPos<eduPos-1) {
             $('#scroll-to-about').addClass('navbar-position-indicator');
         }else{
             $('#scroll-to-about').removeClass('navbar-position-indicator');
         }
 
-        if(curPos>=eduPos && curPos<projectsPos) {
+        if(curPos>=eduPos-1 && curPos<projectsPos-1) {
             $('#scroll-to-education').addClass('navbar-position-indicator');
         }else{
             $('#scroll-to-education').removeClass('navbar-position-indicator');
         }
 
-        if(curPos>=projectsPos && curPos<skillsPos) {
+        if(curPos>=projectsPos-1 && curPos<skillsPos-1) {
             $('#scroll-to-projects').addClass('navbar-position-indicator');
         }else{
             $('#scroll-to-projects').removeClass('navbar-position-indicator');
         }
 
-        if(curPos>=skillsPos) {
+        if(curPos>=skillsPos-1) {
             $('#scroll-to-skills').addClass('navbar-position-indicator');
         }else{
             $('#scroll-to-skills').removeClass('navbar-position-indicator');
