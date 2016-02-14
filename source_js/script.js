@@ -177,6 +177,37 @@ function navbar_effect_on_scroll() {
 
 
 
+
+        if(curPos>=homePos && curPos<aboutPos) {
+            $('#scroll-to-home').addClass('navbar-position-indicator');
+        }else{
+            $('#scroll-to-home').removeClass('navbar-position-indicator');
+        }
+
+        if(curPos>=aboutPos && curPos<eduPos) {
+            $('#scroll-to-about').addClass('navbar-position-indicator');
+        }else{
+            $('#scroll-to-about').removeClass('navbar-position-indicator');
+        }
+
+        if(curPos>=eduPos && curPos<projectsPos) {
+            $('#scroll-to-education').addClass('navbar-position-indicator');
+        }else{
+            $('#scroll-to-education').removeClass('navbar-position-indicator');
+        }
+
+        if(curPos>=projectsPos && curPos<skillsPos) {
+            $('#scroll-to-projects').addClass('navbar-position-indicator');
+        }else{
+            $('#scroll-to-projects').removeClass('navbar-position-indicator');
+        }
+
+        if(curPos>=skillsPos) {
+            $('#scroll-to-skills').addClass('navbar-position-indicator');
+        }else{
+            $('#scroll-to-skills').removeClass('navbar-position-indicator');
+        }
+
     });
 }
 
