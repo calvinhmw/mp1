@@ -32,6 +32,8 @@
       position: fixed;
       left: 0;
       top: 0;
+      @include animation-duration-control(3s);
+      @include animation-delay-control(3s);
       #name-label {
         @include align-vertically();
         font-family: $font-label3;
@@ -66,6 +68,22 @@
       font: 4em $font-banner1;
       z-index: 100;
     }
+
+    #go-down-about {
+      position: absolute;
+      width: 100%;
+      font-size: 3.5em;
+      bottom: 7%;
+      margin: auto;
+      text-align: center;
+      @include animation-duration-control(3s);
+      @include animation-delay-control(3s);
+
+      i:hover {
+        color: antiquewhite;
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -92,38 +110,120 @@
 }
 
 .navbar-visible {
-  background-color: rgba(3,3,3,0.5);
+  background-color: rgba(3, 3, 3, 0.5);
 }
 
 .navbar-invisible {
   background-color: transparent;
 }
 
-.navbar-position-indicator{
+.navbar-position-indicator {
   border: 1px solid antiquewhite;
 }
 
 // on page load, animation starts:
-@-webkit-keyframes slow-start { 0% { opacity:0; } 100% { opacity:1; } }
-@-moz-keyframes slow-start { 0% { opacity:0; } 100% { opacity:1; } }
-@keyframes slow-start { 0% { opacity:0; } 100% { opacity:1; } }
+@-webkit-keyframes slow-start {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes slow-start {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slow-start {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 // change banner's text color, animation starts:
-@-webkit-keyframes text-color { 0% { color: black; } 100% { color: azure; } }
-@-moz-keyframes text-color { 0% { color: black; } 100% { color: azure; } }
-@keyframes text-color { 0% { color: black; } 100% { color: azure;} }
+@-webkit-keyframes text-color {
+  0% {
+    color: black;
+  }
+  100% {
+    color: azure;
+  }
+}
 
+@-moz-keyframes text-color {
+  0% {
+    color: black;
+  }
+  100% {
+    color: azure;
+  }
+}
+
+@keyframes text-color {
+  0% {
+    color: black;
+  }
+  100% {
+    color: azure;
+  }
+}
+
+// this animation is for the down arrow
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@-moz-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
 
 .animation-generic {
   opacity: 0;
   -webkit-animation: slow-start ease-out 1;
   -moz-animation: slow-start ease-out 1;
   animation: slow-start ease-out 1;
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
+.animation-go-down-about {
+  opacity: 0;
+  -webkit-animation: appear ease-out 1;
+  -moz-animation: appear ease-out 1;
+  animation: appear ease-out 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
 
 .animation-hi {
   color: black;
@@ -131,11 +231,10 @@
   -webkit-animation: slow-start 3s ease-out 0s 1, text-color 1.5s ease-out 2.5s 1;
   -moz-animation: slow-start 3s ease-out 0s 1, text-color 1.5s ease-out 2.5s 1;
   animation: slow-start 3s ease-out 0s 1, text-color 1.5s ease-out 2.5s 1;
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
-
 
 .animation-mingwei {
   color: black;
@@ -143,11 +242,10 @@
   -webkit-animation: slow-start 3s ease-out 1s 1, text-color 1.5s ease-out 2.5s 1;
   -moz-animation: slow-start 3s ease-out 1s 1, text-color 1.5s ease-out 2.5s 1;
   animation: slow-start 3s ease-out 1s 1, text-color 1.5s ease-out 2.5s 1;
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
-
 
 .animation-welcome {
   color: black;
@@ -155,13 +253,10 @@
   -webkit-animation: slow-start 2s ease-out 2s 1, text-color 1.5s ease-out 2.5s 1;
   -moz-animation: slow-start 2s ease-out 2s 1, text-color 1.5s ease-out 2.5s 1;
   animation: slow-start 2s ease-out 2s 1, text-color 1.5s ease-out 2.5s 1;
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
-
-
-
 
 section {
   position: relative;
@@ -247,7 +342,8 @@ section {
       h3 {
         font-weight: bold;
         font-size: 1.3em;
-        color: blueviolet;
+        //color: blueviolet;
+        color: #3c510c;
       }
       p {
         font-style: italic;
@@ -329,21 +425,36 @@ section {
       font: 2em $font-section-header2;
       margin-bottom: 1%;
     }
+    //#copyright {
+      //font-family: $font-regular;
+      //margin-bottom: 2%;
+    //}
   }
 }
 
 #go-up-home {
   font-size: 4em;
-  opacity: 0.4;
+  opacity: 0.6;
   position: fixed;
   right: 6%;
   bottom: 8%;
   display: none;
+  color: #1fa67a;
 }
 
 #go-up-home:hover {
-  color: orange;
+  color: blueviolet;
   cursor: pointer;
+}
+
+#cover-whole-page {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 9999;
 }
 
 //class
@@ -368,11 +479,9 @@ section {
   overflow: hidden;
 }
 
-.box-with-shadow{
+.box-with-shadow {
   border-radius: 30px;
 }
-
-
 
 .regular-spacing {
   line-height: 180%;
@@ -433,7 +542,7 @@ section {
       @include align-vertically(absolute);
       overflow: hidden;
       float: right;
-      box-shadow:inset 1px 1px 3px 0 rgba(0,0,0,0.1);
+      box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       background-size: cover;
 
@@ -441,7 +550,7 @@ section {
         position: absolute;
         height: 100%;
         width: 100%;
-        background: rgba(0,0,0,0.4);
+        background: rgba(0, 0, 0, 0.4);
         text-align: center;
         opacity: 0;
         @include transition-feature(opacity, 0.2s, ease-out);
@@ -454,7 +563,7 @@ section {
     .carousel-image:hover {
       cursor: pointer;
     }
-    .carousel-image:hover .image-overlay{
+    .carousel-image:hover .image-overlay {
       opacity: 1;
     }
   }
@@ -490,7 +599,6 @@ section {
   }
 
 }
-
 
 .hover-carousel-change {
   opacity: 0.2;
@@ -580,7 +688,7 @@ section {
   height: 100%;
   text-align: center;
   z-index: 1000;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
 
 }
 
@@ -931,7 +1039,24 @@ section {
   bottom: 91.66667%;
 }
 
+// css media queries (cannot get it to work with video resizing):
+
+//@media (min-aspect-ratio: 16/9) {
+//  #background-video {
+//    height: 300%;
+//    top: -100%;
+//  }
+//}
+//
+//@media (max-aspect-ratio: 16/9) {
+//  #background-video {
+//    width: 300%;
+//    left: -100%;
+//  }
+//}
+//
 
 // reference:
-// http://codepen.io/bluehaus/pen/EfGyi   ->   referred for fadein animation
-// 
+// http://codepen.io/bluehaus/pen/EfGyi   ->   learned how to make fadein animation
+// http://agelber.com/blog/looping-carousel/   -> learned how to make carousel
+// https://www.udacity.com/courses/ud893   -> learned how to build a multi-column layout

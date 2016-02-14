@@ -1,6 +1,7 @@
 var videoAsRatio = 1280 / 720;
 var $root = $('html body');
 
+//$(window).onload(function() {
 $(document).ready(function () {
 
     var newwidth = $(window).width();
@@ -21,12 +22,9 @@ $(document).ready(function () {
 
     if (videoAsRatio > homeAsRatio) {
         $("#background-video").css({"height": homeheight});
-        console.log("yes");
     } else {
         $("#background-video").css({"width": homewidth});
-        console.log('no');
     }
-    //$("section").css({"min-height": 0.8 * $(window).height()});
     $("section").css({"min-height": 0.9 * $(window).height()});
 
     $("#footer-home").css({"min-height": 0.15 * $(window).height()});
@@ -36,6 +34,12 @@ $(document).ready(function () {
     smooth_scroll();
     navbar_effect_on_scroll();
 });
+
+
+$(window).load(function() {
+    $("#cover-whole-page").hide();
+});
+
 
 
 // need to find a new way to resize window
@@ -132,7 +136,7 @@ function animate_modal() {
 
 
 function smooth_scroll() {
-    $("#nav-list li, #go-up-home").click(function (event) {
+    $("#nav-list li, #go-up-home, #go-down-about").click(function (event) {
         var scrollTo = $(this).attr('id').split('-')[2];
         //console.log(scrollTo);
         //$('html body')
@@ -209,6 +213,7 @@ function navbar_effect_on_scroll() {
 
     });
 }
+
 
 
 
