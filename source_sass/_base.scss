@@ -460,6 +460,11 @@ section {
   left: 0;
   background: #fff;
   z-index: 9999;
+  text-align: center;
+  div {
+    font-size: 3em;
+    @include align-vertically(relative);
+  }
 }
 
 //class

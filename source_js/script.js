@@ -1,15 +1,14 @@
 var videoAsRatio = 1280 / 720;
 var $root = $('html body');
 
-//$(window).onload(function() {
 $(document).ready(function () {
 
     var newwidth = $(window).width();
     var newheight = $(window).height();
     $("#home").css({"height": newheight, "width": newwidth});
 
-    var videoheight = $("#background-video").height();
-    var videowidth = $("#background-video").width();
+    //var videoheight = $("#background-video").height();
+    //var videowidth = $("#background-video").width();
     var homewidth = $("#home").width();
     var homeheight = $("#home").height();
     //console.log("home height: "+homeheight);
@@ -36,7 +35,7 @@ $(document).ready(function () {
 });
 
 
-$(window).load(function() {
+$(window).load(function () {
     $("#cover-whole-page").hide();
 
     $('#background-video, #nav-bar').removeClass('prevent-animation').addClass('animation-generic');
@@ -47,25 +46,43 @@ $(window).load(function() {
 });
 
 
-
-// need to find a new way to resize window
-
 $(window).resize(function () {
-    var oldHomewidth = $("#home").width();
-    var oldHomeheight = $("#home").height();
-    var oldHomeAsRatio = oldHomewidth / oldHomeheight;
+    var newWidth = $(window).width();
+    var newHeight = $(window).height();
 
-    $("#home").css({"width": $(window).width(), "height": $(window).height()});
+    $("#home").css({"height": newHeight, "width": newWidth});
 
-    var videoheight = $("#background-video").height();
-    var videowidth = $("#background-video").width();
+    var homeWidth = $("#home").width();
+    var homeHeight = $("#home").height();
 
-    var homewidth = $("#home").width();
-    var homeheight = $("#home").height();
-    var homeAsRatio = homewidth / homeheight;
+    $("#background-video").css({"width": homeWidth, "height": homeWidth / videoAsRatio});
+    var videoHeight = $("#background-video").height();
+    $("#home").css({"height": videoHeight});
 
+    $("section").css({"min-height": 0.9 * $(window).height()});
 
+    $("#footer-home").css({"min-height": 0.15 * $(window).height()});
 });
+
+// uncomment to use this safe version
+
+//$(window).resize(function () {
+//    var oldHomewidth = $("#home").width();
+//    var oldHomeheight = $("#home").height();
+//    var oldHomeAsRatio = oldHomewidth / oldHomeheight;
+//
+//    $("#home").css({"width": $(window).width(), "height": $(window).height()});
+//
+//    var videoheight = $("#background-video").height();
+//    var videowidth = $("#background-video").width();
+//
+//    var homewidth = $("#home").width();
+//    var homeheight = $("#home").height();
+//    var homeAsRatio = homewidth / homeheight;
+//
+//
+//});
+
 
 function animate_carousel() {
     var num_carousels = $(".carousel-content").length;
