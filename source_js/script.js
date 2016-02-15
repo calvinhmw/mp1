@@ -38,6 +38,12 @@ $(document).ready(function () {
 
 $(window).load(function() {
     $("#cover-whole-page").hide();
+
+    $('#background-video, #nav-bar').removeClass('prevent-animation').addClass('animation-generic');
+    $("#banner-text-1 span:first-child").removeClass('prevent-animation').addClass('animation-hi');
+    $("#banner-text-1 span:nth-child(2)").removeClass('prevent-animation').addClass('animation-mingwei');
+    $('#banner-text-2').removeClass('prevent-animation').addClass('animation-welcome');
+    $('#go-down-about').removeClass('prevent-animation').addClass('animation-go-down-about');
 });
 
 

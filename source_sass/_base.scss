@@ -21,8 +21,8 @@
       top: 0;
       left: 0;
       z-index: -500;
-      @include animation-duration-control(3s);
-      @include animation-delay-control(3s);
+      @include animation-duration-control(4s);
+      @include animation-delay-control(4s);
     }
     #nav-bar {
       width: 100%;
@@ -32,8 +32,8 @@
       position: fixed;
       left: 0;
       top: 0;
-      @include animation-duration-control(3s);
-      @include animation-delay-control(3s);
+      @include animation-duration-control(4s);
+      @include animation-delay-control(4s);
       #name-label {
         @include align-vertically();
         font-family: $font-label3;
@@ -76,8 +76,8 @@
       bottom: 7%;
       margin: auto;
       text-align: center;
-      @include animation-duration-control(3s);
-      @include animation-delay-control(3s);
+      @include animation-duration-control(4s);
+      @include animation-delay-control(4s);
 
       i:hover {
         color: antiquewhite;
@@ -228,9 +228,9 @@
 .animation-hi {
   color: black;
   opacity: 0;
-  -webkit-animation: slow-start 3s ease-out 0s 1, text-color 1.5s ease-out 2.5s 1;
-  -moz-animation: slow-start 3s ease-out 0s 1, text-color 1.5s ease-out 2.5s 1;
-  animation: slow-start 3s ease-out 0s 1, text-color 1.5s ease-out 2.5s 1;
+  -webkit-animation: slow-start 3s ease-out 0s 1, text-color 1.5s ease-out 3s 1;
+  -moz-animation: slow-start 3s ease-out 0s 1, text-color 1.5s ease-out 3s 1;
+  animation: slow-start 3s ease-out 0s 1, text-color 1.5s ease-out 3s 1;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -239,9 +239,9 @@
 .animation-mingwei {
   color: black;
   opacity: 0;
-  -webkit-animation: slow-start 3s ease-out 1s 1, text-color 1.5s ease-out 2.5s 1;
-  -moz-animation: slow-start 3s ease-out 1s 1, text-color 1.5s ease-out 2.5s 1;
-  animation: slow-start 3s ease-out 1s 1, text-color 1.5s ease-out 2.5s 1;
+  -webkit-animation: slow-start 3s ease-out 1s 1, text-color 1.5s ease-out 3s 1;
+  -moz-animation: slow-start 3s ease-out 1s 1, text-color 1.5s ease-out 3s 1;
+  animation: slow-start 3s ease-out 1s 1, text-color 1.5s ease-out 3s 1;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -250,12 +250,18 @@
 .animation-welcome {
   color: black;
   opacity: 0;
-  -webkit-animation: slow-start 2s ease-out 2s 1, text-color 1.5s ease-out 2.5s 1;
-  -moz-animation: slow-start 2s ease-out 2s 1, text-color 1.5s ease-out 2.5s 1;
-  animation: slow-start 2s ease-out 2s 1, text-color 1.5s ease-out 2.5s 1;
+  -webkit-animation: slow-start 3s ease-out 2s 1, text-color 1.5s ease-out 3s 1;
+  -moz-animation: slow-start 3s ease-out 2s 1, text-color 1.5s ease-out 3s 1;
+  animation: slow-start 3s ease-out 2s 1, text-color 1.5s ease-out 3s 1;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+}
+
+.prevent-animation {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
 }
 
 section {
@@ -342,7 +348,6 @@ section {
       h3 {
         font-weight: bold;
         font-size: 1.3em;
-        //color: blueviolet;
         color: #3c510c;
       }
       p {
@@ -516,13 +521,13 @@ section {
     left: 0;
     float: left;
     padding: 0.5em 0.2em 0.5em 0;
-    //border-radius: 0 50% 50% 0;
+    border-radius: 0 10px 10px 0;
   }
   #carousel-r-arrow {
     right: 0;
     float: right;
     padding: 0.5em 0 0.5em 0.2em;
-    //border-radius: 50% 0 0 50%;
+    border-radius: 10px 0 0 10px;
   }
 
   .carousel-content {
@@ -534,8 +539,9 @@ section {
     .carousel-description {
       @include align-vertically(absolute);
       //border: 2px solid blue ;
-      font: 2.5em $font-banner1;
-      color: antiquewhite;
+      font: bold 2em $font-regular;
+      text-transform: uppercase;
+      color: #3c510c;
       float: left;
     }
     .carousel-image {
@@ -550,11 +556,12 @@ section {
         position: absolute;
         height: 100%;
         width: 100%;
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.7);
         text-align: center;
         opacity: 0;
         @include transition-feature(opacity, 0.2s, ease-out);
         i {
+          color: ghostwhite;
           font-size: 2.5em;
           @include align-vertically(absolute);
         }
@@ -567,37 +574,6 @@ section {
       opacity: 1;
     }
   }
-
-  #carousel-0 {
-    background: #2b81af;
-    background: -webkit-linear-gradient(left, #2b81af, #0d3349);
-    background: -o-linear-gradient(right, #2b81af, #0d3349);
-    background: -moz-linear-gradient(right, #2b81af, #0d3349);
-    background: linear-gradient(to right, #2b81af, #0d3349);
-
-  }
-  #carousel-1 {
-    background-color: #1fa67a;
-    background: -webkit-linear-gradient(left, #1fa67a, #BD3613);
-    background: -o-linear-gradient(right, #1fa67a, #BD3613);
-    background: -moz-linear-gradient(right, #1fa67a, #BD3613);
-    background: linear-gradient(to right, #1fa67a, #BD3613);
-  }
-  #carousel-2 {
-    background: #8A6343;
-    background: -webkit-linear-gradient(left, #8A6343, #BD3613);
-    background: -o-linear-gradient(right, #8A6343, #BD3613);
-    background: -moz-linear-gradient(right, #8A6343, #BD3613);
-    background: linear-gradient(to right, #8A6343, #BD3613);
-  }
-  #carousel-3 {
-    background: #B94A48;
-    background: -webkit-linear-gradient(left, #B94A48, #BD3613);
-    background: -o-linear-gradient(right, #B94A48, #BD3613);
-    background: -moz-linear-gradient(right, #B94A48, #BD3613);
-    background: linear-gradient(to right, #B94A48, #BD3613);
-  }
-
 }
 
 .hover-carousel-change {

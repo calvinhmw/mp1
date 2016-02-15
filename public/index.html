@@ -9,13 +9,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 
+<body>
 
 <header id="home">
     <div id="video-container">
-        <video id="background-video" class="animation-generic" autoplay muted preload=auto loop>
+        <video id="background-video" class="prevent-animation" autoplay muted preload=auto loop>
             <source src="media/scene.mp4" type="video/mp4">
         </video>
-        <nav id="nav-bar" class="navbar-normal navbar-invisible animation-generic">
+        <nav id="nav-bar" class="navbar-normal navbar-invisible prevent-animation">
             <h1 id="name-label">Mingwei Hu</h1>
             <ul id="nav-list">
                 <li id="scroll-to-home" class="navbar-position-indicator">home</li>
@@ -26,11 +27,12 @@
             </ul>
         </nav>
         <div id="banner" class="center">
-            <h1 id="banner-text-1"><span class="animation-hi">Hi,</span> <span class="animation-mingwei">I'm Mingwei</span></h1>
-            <h3 id="banner-text-2" class="animation-welcome">Welcome to my page!</h3>
+            <h1 id="banner-text-1"><span class="prevent-animation">Hi,</span> <span
+                    class="prevent-animation">I'm Mingwei</span></h1>
+            <h3 id="banner-text-2" class="prevent-animation">Welcome to my page!</h3>
         </div>
 
-        <div id="go-down-about" class="animation-go-down-about"><i class="fa fa-chevron-circle-down"></i></div>
+        <div id="go-down-about" class="prevent-animation"><i class="fa fa-chevron-circle-down"></i></div>
     </div>
 </header>
 <section id="about">
@@ -46,7 +48,8 @@
                     My name is Mingwei Hu and I am currently a first year master student at
                     Department of Computer Science, University of Illinois at Urbana-Champaign (UIUC). My research
                     interest includes Computer Networking and Multimedia Systems. My advisor
-                    is professor <a href="https://www.ece.illinois.edu/directory/profile/klara" target="_blank">Klara Nahrstedt</a>. </p>
+                    is professor <a href="https://www.ece.illinois.edu/directory/profile/klara" target="_blank">Klara
+                    Nahrstedt</a>. </p>
                 <p class="regular-spacing">In May 2015, I graduated with a CS Bachelor's degree with high honor from
                     UIUC.</p>
                 <p>Feel free to reach me at the following sites. I'm always open to new ideas :) !</p>
@@ -75,7 +78,7 @@
 </section>
 <section id="education">
     <div class="section-header row center"><span>Education</span></div>
-    <div class="section-content column col-8 l-offset-2">
+    <div class="section-content column col-10 l-offset-1">
         <div class="column col-10 l-offset-1 edu-content" id="ms-edu">
             <div class="column col-3 uiuc-pic">
                 <img src="media/uofi.png" class="col-11" alt="uiuc">
@@ -104,15 +107,18 @@
                 <p>Bachelor of Science in Computer Science, May 2015</p>
                 <ul class="regular-spacing">
                     <li>
-                        SPIN(Students Pushing Innovation) Intern at <a href="http://www.ncsa.illinois.edu/" target="_blank">National
+                        SPIN(Students Pushing Innovation) Intern at <a href="http://www.ncsa.illinois.edu/"
+                                                                       target="_blank">National
                         Center for Supercomputing Applications</a>
                     </li>
                     <li>
-                        Undergraduate research assistant in <a href="http://cairo.cs.uiuc.edu/" target="_blank">Multimedia Operating
+                        Undergraduate research assistant in <a href="http://cairo.cs.uiuc.edu/" target="_blank">Multimedia
+                        Operating
                         System and Networking Group</a>
                     </li>
                     <li>
-                        Software Developer at <a href="http://cee.illinois.edu/" target="_blank">Department of Civil Engineering</a>
+                        Software Developer at <a href="http://cee.illinois.edu/" target="_blank">Department of Civil
+                        Engineering</a>
                     </li>
                 </ul>
             </div>
@@ -123,7 +129,7 @@
 
 <section id="projects">
     <div class="section-header row center"><span>Checkout some of my recent projects!</span></div>
-    <div class="section-content column col-8 l-offset-2">
+    <div class="section-content column col-10 l-offset-1">
 
         <div class="carousel column">
             <div class="carousel-arrow" id="carousel-l-arrow"><a id="arrow-left" class="fa fa-angle-left"></a></div>
@@ -131,6 +137,7 @@
             <div class="carousel-content box-with-shadow" id="carousel-0">
                 <div class="carousel-description col-5 center"><h1>Human and Robot</h1></div>
                 <div class="carousel-image col-6 l-offset-5" id="robot">
+                    <!--<div class="image-overlay"><h2 class="column col-10 l-offset-1">Click for more details</h2></div>-->
                     <div class="image-overlay"><i class="fa fa-plus"></i></div>
                     <img src="media/robot.gif" class="col-12">
                 </div>
@@ -166,7 +173,7 @@
 
 <section id="skills">
     <div class="section-header row center"><span>My top technical skills</span></div>
-    <div class="section-content column col-8 l-offset-2">
+    <div class="section-content column col-10 l-offset-1">
         <div class="row row-4 ">
             <div class="column col-4 icon-container">
                 <img src="media/cpp_logo.png" class="col-6 l-offset-3" alt="cpp">
