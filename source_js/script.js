@@ -1,5 +1,10 @@
 var videoAsRatio = 1280 / 720;
-var $root = $('html body');
+
+// this only works for chrome and safari
+//var $root = $('html body');
+
+// this works for all browsers, but scroll will be executed twice!
+var $root = $('html, body');
 
 $(document).ready(function () {
 
